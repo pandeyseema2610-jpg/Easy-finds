@@ -1,6 +1,571 @@
 
-<h1>  This is a product of cosmetics and jewellery items like sunscream,jewellery etc     </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GlowNest - Beauty & Cosmetics</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-<h1>   this is different product </h1>
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fffaf8;
+    color: #333;
+}
+
+header {
+    background: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px #00000010;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #c47d83;
+}
+
+nav a {
+    text-decoration: none;
+    color: #444;
+    margin: 0 15px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #c47d83;
+}
+
+.cart {
+    background: #c47d83;
+    color: white;
+    padding: 10px 17px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.hero {
+    min-height: 550px;
+    background: linear-gradient(90deg, #f8e5e2 45%, #f1d2ce);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 8%;
+    gap: 30px;
+}
+
+.hero-content {
+    max-width: 500px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 55px;
+    color: #573e40;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    color: #705f60;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.btn {
+    background: #c47d83;
+    color: white;
+    padding: 13px 28px;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #a65f68;
+}
+
+.hero img {
+    width: 43%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+section {
+    padding: 65px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    color: #563d40;
+}
+
+.section-title p {
+    color: #888;
+    margin-top: 10px;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.category {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 260px;
+    cursor: pointer;
+}
+
+.category img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.category:hover img {
+    transform: scale(1.1);
+}
+
+.category h3 {
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+    right: 10px;
+    text-align: center;
+    background: white;
+    padding: 12px;
+    border-radius: 5px;
+    color: #6a4449;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.product {
+    background: white;
+    border-radius: 9px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px #0000000c;
+    transition: .3s;
+}
+
+.product:hover {
+    transform: translateY(-7px);
+}
+
+.product img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 17px;
+}
+
+.product-info h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 8px;
+}
+
+.product-info p {
+    color: #888;
+    font-size: 13px;
+}
+
+.price {
+    color: #c47d83;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.add-btn {
+    width: 100%;
+    padding: 11px;
+    background: #c47d83;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background: #a65f68;
+}
+
+.about {
+    background: #f5e6e2;
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.about img {
+    width: 45%;
+    border-radius: 10px;
+}
+
+.about-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    margin-bottom: 18px;
+    color: #563d40;
+}
+
+.about-content p {
+    line-height: 1.9;
+    color: #756466;
+}
+
+.newsletter {
+    text-align: center;
+    background: #fff0ed;
+}
+
+.newsletter input {
+    width: 280px;
+    padding: 13px;
+    border: 1px solid #ddd;
+    outline: none;
+    margin-top: 20px;
+}
+
+.newsletter button {
+    padding: 13px 20px;
+    border: none;
+    background: #c47d83;
+    color: white;
+    cursor: pointer;
+}
+
+footer {
+    background: #302526;
+    color: white;
+    padding: 35px 7%;
+    text-align: center;
+}
+
+footer p {
+    color: #d5c5c5;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+@media(max-width: 900px) {
+    .categories, .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero img {
+        width: 45%;
+    }
+
+    nav a {
+        margin: 0 7px;
+    }
+}
+
+@media(max-width: 600px) {
+    header {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    .hero, .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero img, .about img {
+        width: 100%;
+    }
+
+    .categories, .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .category {
+        height: 180px;
+    }
+
+    .product img {
+        height: 160px;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .newsletter input {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">GlowNest.</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="cart">
+        🛍 Cart (<span id="cartCount">0</span>)
+    </button>
+</header>
+
+<!-- HOME -->
+<div class="hero" id="home">
+    <div class="hero-content">
+        <h1>Discover Your Natural Glow</h1>
+        <p>
+            Explore beautiful cosmetics, skincare, jewellery
+            and sun protection products. Make every day
+            special with GlowNest.
+        </p>
+        <a href="#products" class="btn">Shop Now</a>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=900" alt="Beauty products">
+</div>
+
+<!-- CATEGORIES -->
+<section id="categories">
+    <div class="section-title">
+        <h2>Our Categories</h2>
+        <p>Explore beauty products for every occasion</p>
+    </div>
+
+    <div class="categories">
+
+        <div class="category">
+            <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600" alt="Skincare">
+            <h3>Skincare</h3>
+        </div>
+
+        <div class="category">
+            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600" alt="Jewellery">
+            <h3>Jewellery</h3>
+        </div>
+
+        <div class="category">
+            <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=600" alt="Sunscreen">
+            <h3>Sunscreen</h3>
+        </div>
+
+        <div class="category">
+            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600" alt="Makeup">
+            <h3>Makeup</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+    <div class="section-title">
+        <h2>Our Best Products</h2>
+        <p>Choose your favourite beauty essentials</p>
+    </div>
+
+    <div class="products">
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600" alt="Face serum">
+            <div class="product-info">
+                <h3>Face Serum</h3>
+                <p>Hydrating skincare serum</p>
+                <div class="price">Rs. 850</div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600" alt="Gold jewellery">
+            <div class="product-info">
+                <h3>Golden Earrings</h3>
+                <p>Elegant fashion jewellery</p>
+                <div class="price">Rs. 1200</div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=600" alt="Sunscreen">
+            <div class="product-info">
+                <h3>Sun Cream SPF 50</h3>
+                <p>Daily sun protection</p>
+                <div class="price">Rs. 650</div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600" alt="Makeup kit">
+            <div class="product-info">
+                <h3>Makeup Kit</h3>
+                <p>Beautiful makeup collection</p>
+                <div class="price">Rs. 1500</div>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=900" alt="GlowNest collection">
+
+    <div class="about-content">
+        <h2>Welcome to GlowNest</h2>
+
+        <p>
+            GlowNest is your favourite destination for beauty
+            and self-care. We bring together skincare,
+            cosmetics, sunscreen and stylish jewellery
+            in one beautiful place.
+
+            Our mission is to help everyone feel confident,
+            beautiful and special every day.
+        </p>
+
+        <br>
+        <a href="#products" class="btn">Explore Products</a>
+    </div>
+
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter" id="contact">
+
+    <div class="section-title">
+        <h2>Join Our Beauty Club</h2>
+        <p>Subscribe for updates, offers and new arrivals.</p>
+    </div>
+
+    <form id="subscribeForm">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+    </form>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h2 class="logo" style="color:white">GlowNest.</h2>
+    <p>Beauty • Skincare • Jewellery • Cosmetics</p>
+    <p>© 2026 GlowNest. All Rights Reserved.</p>
+</footer>
+
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    let cart = 0;
+
+    // Add to cart
+    $(".add-btn").click(function() {
+
+        cart++;
+
+        $("#cartCount").text(cart);
+
+        let productName = $(this)
+            .closest(".product")
+            .find("h3")
+            .text();
+
+        alert(productName + " added to your cart!");
+    });
+
+    // Newsletter subscription
+    $("#subscribeForm").submit(function(e) {
+
+        e.preventDefault();
+
+        alert("Thank you for subscribing to GlowNest!");
+
+        $(this)[0].reset();
+    });
+
+    // Smooth scrolling
+    $('a[href^="#"]').click(function(e) {
+
+        let target = $(this).attr("href");
+
+        if ($(target).length) {
+            e.preventDefault();
+
+            $("html, body").animate({
+                scrollTop: $(target).offset().top - 80
+            }, 700);
+        }
+    });
+
+});
+</script>
+
+</body>
+</html>
